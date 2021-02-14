@@ -14,8 +14,8 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
-        'passwords' => 'users',
+        'guard' => 'warung',
+        'passwords' => 'warungs',
     ],
 
     /*
@@ -39,6 +39,14 @@ return [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
+        ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+        'warung' => [
+            'driver' => 'session',
+            'provider' => 'warungs',
         ],
 
         'api' => [
@@ -70,6 +78,14 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Admin::class,
+        ],
+        'warungs' => [
+            'driver' => 'eloquent',
+            'model' => App\Akun::class,
+        ],
 
         // 'users' => [
         //     'driver' => 'database',
@@ -93,8 +109,8 @@ return [
     */
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
+        'warungs' => [
+            'provider' => 'warungs',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
